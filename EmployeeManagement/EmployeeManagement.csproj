@@ -240,13 +240,18 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Admin\Employee\Index.cshtml" />
+    <Content Include="Views\Admin\Employee\Create.cshtml" />
+    <Content Include="Views\Admin\Employee\Edit.cshtml" />
+    <Content Include="Views\Admin\Holiday\Index.cshtml" />
+    <Content Include="Views\Admin\Holiday\CreateHoliday.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Calculator\" />
     <Folder Include="Views\Default\" />
-    <Folder Include="Views\Employee\" />
-    <Folder Include="Views\Holiday\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
