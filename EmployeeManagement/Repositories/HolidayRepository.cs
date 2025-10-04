@@ -14,7 +14,7 @@ namespace EmployeeManagement.Repositories
         {
             using (var db = new employeeDBEntities())
             {
-                return db.Holidays.AsNoTracking().OrderBy(h => h.HolidayDate).ToList();
+                return db.Holidays.AsNoTracking().OrderBy(h => h.date).ToList();
             }
         }
 
@@ -24,9 +24,9 @@ namespace EmployeeManagement.Repositories
             {
                 // Use DbFunctions.TruncateTime if comparing DateTime in EF query
                 return db.Holidays
-                         .Where(h => DbFunctions.TruncateTime(h.HolidayDate) >= DbFunctions.TruncateTime(from)
-                                  && DbFunctions.TruncateTime(h.HolidayDate) <= DbFunctions.TruncateTime(to))
-                         .Select(h => DbFunctions.TruncateTime(h.HolidayDate).Value)
+                         .Where(h => DbFunctions.TruncateTime(h.date) >= DbFunctions.TruncateTime(from)
+                                  && DbFunctions.TruncateTime(h.date) <= DbFunctions.TruncateTime(to))
+                         .Select(h => DbFunctions.TruncateTime(h.date).Value)
                          .ToList();
             }
         }
@@ -42,7 +42,7 @@ namespace EmployeeManagement.Repositories
 
         public void Delete(int id)
         {
-            using (var db = new EmployeeDbContext())
+            using (var db = new employeeDBEntities())
             {
                 var h = db.Holidays.Find(id);
                 if (h != null)
