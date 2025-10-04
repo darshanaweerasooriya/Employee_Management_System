@@ -12,20 +12,21 @@ namespace EmployeeManagement.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+    using EmployeeManagement.Models;
+
     public partial class employeeDBEntities : DbContext
     {
-        public employeeDBEntities()
-            : base("name=employeeDBEntities")
-        {
-        }
-    
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            throw new UnintentionalCodeFirstException();
-        }
-    
+        public employeeDBEntities() : base("name=employeeDBEntities") { }
+
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Holiday> Holidays { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            // Map the Employee entity to the correct table name
+            modelBuilder.Entity<Employee>().ToTable("employee");
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

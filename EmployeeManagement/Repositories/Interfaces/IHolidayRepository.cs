@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using EmployeeManagement.Models;
 
 namespace EmployeeManagement.Repositories.Interfaces
 {
     public interface IHolidayRepository
     {
-        IEnumerable<Models.Holiday> GetAll();
-        IEnumerable<DateTime> GetHolidatDateBetween(DateTime from, DateTime to);
-        void Add(Models.Holiday holiday);
+        IEnumerable<Holiday> GetAll();
+        IEnumerable<DateTime> GetHolidayDatesBetween(DateTime from, DateTime to);
+        void Add(Holiday holiday);
         void Delete(int id);
     }
 }

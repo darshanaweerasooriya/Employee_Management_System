@@ -20,3 +20,4 @@ namespace EmployeeManagement.Models
         public string Position { get; set; }
     }
 }
+
